@@ -1,0 +1,1 @@
+a:2:{s:4:"test";a:1:{s:10:"last_check";a:4:{s:2:"id";s:9:"localhost";s:4:"type";s:4:"curl";s:4:"time";i:1319534044;s:6:"status";i:200;}}s:10:"www.hj.com";a:1:{s:10:"last_check";a:4:{s:2:"id";s:9:"localhost";s:4:"type";s:4:"curl";s:4:"time";i:1319534044;s:6:"status";i:200;}}}

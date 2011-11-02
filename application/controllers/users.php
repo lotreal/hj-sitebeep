@@ -124,7 +124,7 @@ class Users extends CI_Controller
 		
 		if(!empty($uid))
 		{
-			redirect('/admin', 'refresh');
+			redirect('/checks', 'refresh');
 		}
 	}
 }

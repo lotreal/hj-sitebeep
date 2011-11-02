@@ -19,7 +19,14 @@ class Checks extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('main');
+		$data = array(
+					'uid' => $this->session->userdata('uid'),
+					'username' => $this->session->userdata('username'),
+					'lastdate' => $this->session->userdata('lastdate'),
+					'lastip' => $this->session->userdata('lastip')
+				);
+
+		$this->load->view('checks', $data);
 	}
 }
 

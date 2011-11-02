@@ -370,10 +370,10 @@ class Commonmodel extends CI_Model
 		
 		if($flag)
 		{
-			redirect('/login', 'refresh');
+			redirect('/', 'refresh');
 		}
 		
-		echo '<script type="text/javascript">window.top.location.href="'.site_url('login').'"</script>';
+		echo '<script type="text/javascript">window.top.location.href="'.site_url('/').'"</script>';
 		
     }
 	

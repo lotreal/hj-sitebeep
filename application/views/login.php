@@ -5,7 +5,7 @@
 <title>鸿巨广告效果监测系统_用户登录</title>
 <meta name="keywords" content="鸿巨,广告效果监测,系统,用户登录" />
 <meta name="description" content="鸿巨广告效果监测系统用户登录" />
-<link href="<?php echo base_url();?>images/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url();?>a/images/style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 html,body{ background:#33A1DC;}
 </style>

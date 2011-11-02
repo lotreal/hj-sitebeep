@@ -47,12 +47,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = '';
+$db['default']['hostname'] = 'mysql.hj.com';
+$db['default']['username'] = 'test';
+$db['default']['password'] = 'jGNBKah4RnaGxayq';
+$db['default']['database'] = 'adtracker';
+$db['default']['dbdriver'] = 'mysqli';
+$db['default']['dbprefix'] = 'cdb_';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

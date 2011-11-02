@@ -11,7 +11,8 @@
 */
 
 $platforms = array (
-					'windows nt 6.0'	=> 'Windows Longhorn',
+					'windows nt 6.1'	=> 'Windows 7',
+					'windows nt 6.0'	=> 'Windows Vista',
 					'windows nt 5.2'	=> 'Windows 2003',
 					'windows nt 5.0'	=> 'Windows 2000',
 					'windows nt 5.1'	=> 'Windows XP',
@@ -48,6 +49,12 @@ $platforms = array (
 // The order of this array should NOT be changed. Many browsers return
 // multiple browser types so we want to identify the sub-type first.
 $browsers = array(
+					'SE 2.X'			=> '搜狗高速浏览器',
+					'SE 1.X'			=> '搜狗浏览器',
+					'TencentTraveler'	=> 'TT浏览器',
+					'TheWorld'			=> '世界之窗浏览器',
+					'QQBrowser'			=> 'QQ浏览器',					
+					'Maxthon'			=> 'Maxthon',
 					'Flock'				=> 'Flock',
 					'Chrome'			=> 'Chrome',
 					'Opera'				=> 'Opera',
@@ -164,8 +171,12 @@ $mobiles = array(
 
 // There are hundreds of bots but these are the most common.
 $robots = array(
-					'googlebot'			=> 'Googlebot',
-					'msnbot'			=> 'MSNBot',
+					'googlebot'			=> 'Google',
+					'baiduspider'		=> 'Baidu',
+					'yodaobot'			=> 'Yodao',
+					'sosospider'		=> 'Soso',
+					'sogou web spider'	=> 'Sogou',
+					'msnbot'			=> 'MSN',
 					'slurp'				=> 'Inktomi Slurp',
 					'yahoo'				=> 'Yahoo',
 					'askjeeves'			=> 'AskJeeves',

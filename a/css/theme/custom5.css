@@ -181,6 +181,7 @@ h1 {font-family: 'Open Sans', arial, sans-serif;  font-size:24px; padding:0 0 15
 .checkDetails td{height: auto;}
 
 .checkDetails td.url{color:#333; text-align: left; padding:0px 5px 2px 5px; }
+.checkDetails td.summary{color:#999; text-align: left; padding:0px 5px 2px 5px; }
 
 /* bottom info bar */
 .checkDetails tr.stats td {padding:2px 5px 2px 5px; height:16px; font-size:11px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; }

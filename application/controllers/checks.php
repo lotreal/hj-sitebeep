@@ -39,14 +39,20 @@ class Checks extends CI_Controller {
             die('db error');
             $data = array();
         }
-
+        // var_dump($data);        
+        $overview = array();
         foreach($data as $site => $report) {
             $lc = $report['last_check'];
             $tdiff = time() - $lc['time'];
             
-            $report['rp_sum'] = "{$site}: ". ($report['last_check']['status'] == 200 ? '在线' : '离线'). "<p>上次检测：{$lc['id']} 在 {$tdiff} 秒前通过 {$lc['type']} 方式检测。</p>";
+            $overview[$site] = array(
+                'timestamp' => $tdiff.' 秒前',
+                'status' => $lc['detail']['http_code'] == 200 ? '在线' : '离线',
+                'location' => $lc['sensor']['name'],
+                'detail' => $lc['detail'],
+            );
         }
-        return $data;
+        return $overview;
     }
 }
 

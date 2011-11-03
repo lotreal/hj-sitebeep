@@ -5,15 +5,15 @@ $sensors = array(
     'localhost' => 'http://sitebeep.local.host/a/sensor.php',
 );
 
-
 $dbfile = "{$root_dir}/db";
-echo $dbfile;
+
 if (file_exists($dbfile)) {
     $db = unserialize(file_get_contents($dbfile));
 } else {
     $db = array();
 }
-
+// 测试用, 每次都清空
+$db = array();
 
 function collect($name, $url) {
     $ch = curl_init(); // create cURL handle (ch)
@@ -44,26 +44,28 @@ function collect($name, $url) {
 function analysis($txt) {
     global $db;
     $data = unserialize($txt);
-    var_dump($data);
+    // var_dump($data);
     foreach($data['report'] as $site => $report) {
         // TODO if null then array()
         $db[$site] = array
             (
                 'last_check' => array
                 (
-                    'id' => $data['sensor']['id'],
-                    'type' => $data['sensor']['type'],
                     'time' => $data['time'],
-                    'status' => $report['http_code'],
+                    // 'status' => $report['http_code'],
+                    'sensor' => $data['sensor'],
+                    'detail' => $report,
                  )
              );
     }
-    echo json_encode($db);
+    // echo json_encode($db);
 }
 
 foreach($sensors as $name => $url) {
     $report = collect($name, $url);
     analysis($report);
 }
+
+var_dump($db);
 
 file_put_contents($dbfile, serialize($db));

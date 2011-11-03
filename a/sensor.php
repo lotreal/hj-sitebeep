@@ -3,7 +3,7 @@ $sites = array
     (
         // 'pinjiu' => 'http://www.pinjiu.com',
         // 'cqq' => 'http://www.cqq.com',
-        '测试' => 'http://9.5.2.7',
+        '测试机' => 'http://9.5.2.7',
         '鸿巨桌面' => 'http://www.hj.com',
      );
 
@@ -13,6 +13,8 @@ $report = array
         'sensor' => array
         (
             'id' => 'localhost',
+            'name' => '重庆',
+            'desc' => '鸿巨技术部开发机',
             'type' => 'curl',
          ),
         'report' => array(),

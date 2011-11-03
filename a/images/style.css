@@ -1,0 +1,182 @@
+@charset "utf-8";
+/*全局样式*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;margin:0;padding:0;}
+html,body{background:#F2F6F8;color:#000;font:400 12px/20px Tahoma, sans-serif;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+caption,em,strong,th{font-style:normal;font-weight:inherit;}
+label,select,input,img,select{vertical-align:middle;}
+table{border-collapse:collapse;border-spacing:0;}
+q:before,q:after{content:'';}
+caption,th{text-align:left;}
+fieldset,img{border:none;}
+ol,ul{list-style:none;}
+li{list-style-type:none;}
+del{text-decoration:line-through;}
+blockquote,q{quotes:none;}
+ins{text-decoration:none;}
+:focus{outline:0;}
+/*headings*/
+h1,h2,h3,h4,h5,h6{font-weight:400;}
+h1{font-size:1.9em;}
+h2{font-size:1.7em;}
+h3{font-size:1.5em;}
+h4{font-size:1.3em;}
+h5{font-size:1.2em;}
+h6{font-size:1em;}
+/*字体设置*/
+.fb { font-weight:700; }
+.f12px { font-size:12px; }
+.f14px { font-size:14px; }
+/*其它设置*/
+.left, .right { display:inline; }
+.left { float:left; }
+.right { float:right; }
+.clear { clear:both; }
+.block { display:block; }
+.hidden, .none { display:none; }
+.blank10 { clear:both; display:block; font-size:1px; height:10px; overflow:hidden; }
+/*链接样式*/
+a { text-decoration:none; }
+a:hover { cursor:pointer; text-decoration:underline; }
+a:link, a:visited, a:hover, a:active { color:#000; }
+.sidebar a{ text-decoration:none;}
+.sidebar dt a{color:#0C6796;}
+.sidebar dd a{ display:block; height:32px; line-height:32px;}
+.sidebar dd a:hover{ background-color:#B2D3E4;}
+.topbar a{ color:white;}
+/*通用样式*/
+.login_btn,.config,.user,.channel,.website,.transform,.report,.current,.trigger,.sidebar dd span,.btn,.add_btn,#keyword,.icon1,.icon2,.icon3,.confirm_btn,.mod_report thead,.icon4{ background:url(icon.gif) no-repeat 0 0;}
+.w50{ width:50px; text-align:center;}
+.w5{ width:5%;}
+.w8{ width:8%;}
+.w10{ width:10%;}
+.w12{ width:12%;}
+.w15{ width:15%;}
+.w20{ width:20%;}
+.wauto{ width:auto;}
+.container{ padding:10px;}
+.btn,.add_btn{background-position:0 -50px; width:70px; height:22px;}
+.btn{ border:none;}
+.add_btn{ display:inline-block; text-align:center;}
+#keyword{ background-position:2px -398px; border:1px solid #88BAD3; height:20px; line-height:22px; padding-left:20px;}
+#selected{ font-weight:700;}
+.pages{ text-align:right;}
+.pages a{ padding:2px 5px;}
+.confirm_btn{ background-position:0 -450px; color:white; width:66px; height:26px; border:none;margin-left:80px;}
+.even{ background-color:#F3F8FB;}
+.odd{ background-color:#E8F2F8;}
+/*用户登录*/
+.login { background:url(login_bg.jpg) no-repeat 0 0; width:710px; height:610px; margin:0 auto; position:relative;}
+.login #myform{ position:absolute; top:200px; right:10px; width:300px;}
+.login label{ color:#468DB0; display:inline-block; width:60px;}
+.login li{ padding:5px 0;}
+.login #username,.login #password,.login #captcha{ border:1px solid #A6D0E4; padding:3px 5px 2px;}
+.login .login_btn{display:inline-block;width:92px; height:27px; border:none; margin-left:60px; color:white;}
+/*框架头部*/
+.header,.header h1,.header .topbar{ height:65px;}
+.header{ background:url(icon.gif) repeat-x 0 -600px; position:relative;}
+.header h1{ background:url(logo.jpg) no-repeat 0 0; width:640px; text-indent:-999em; overflow:hidden;}
+.header .topbar{ background:url(header_bg.jpg) no-repeat 0 0;width:640px; position:absolute; top:0; right:0; text-align:right; color:white;}
+/*框架左侧*/
+.sidebar{ padding:10px 10px 0 0;}
+.sidebar .site{ font-weight:700;padding:10px;}
+.sidebar dt,.sidebar dd{text-indent:30px;}
+.sidebar dt{border-top:1px solid #D4E2E9; border-bottom:1px solid #ABC9D8;padding:8px 0;}
+.sidebar .config,.sidebar .user,.sidebar .channel,.sidebar .website,.sidebar .transform,.sidebar .report{ background-position:-65px -100px; display:block; font-size:14px; font-weight:700;height:16px; line-height:16px;}
+.sidebar .user{ background-position:-65px -150px;}
+.sidebar .channel{ background-position:-65px -200px;}
+.sidebar .website{ background-position:-65px -250px;}
+.sidebar .transform{ background-position:-65px -300px;}
+.sidebar .report{ background-position:-65px -350px;}
+.sidebar dt.current{ background-position:0 -500px; background-repeat:repeat-x;}
+.sidebar dd span{ background-position:-15px -420px; display:block; height:32px; line-height:32px; }
+.sidebar .trigger{ background-position:0 -250px; position:absolute; top:40%; right:0;display:block; width:9px; height:41px; text-indent:-9em;overflow:hidden;}
+/*框架主体*/
+.crumb { background-color:#E8F0F5; border-bottom:1px solid #CBE4F2; padding:5px 10px;}
+.mod_list table{ width:100%; border:1px solid #A4C8DB; margin:10px 0;}
+.mod_list thead{ background:url(th_bg.jpg) repeat-x 0 -26px;}
+.mod_list th{ background:url(th_bg.jpg) no-repeat left 0;}
+.mod_list th,.mod_list td{ padding:5px;}
+.mod_list .w50{ background:none;}
+.mod_list td{ border-top:1px solid #C7E0EE;}
+.mod_list .icon1,.mod_list .icon2,.mod_list .icon3{display:block; width:14px; height:14px; text-indent:-99em; overflow:hidden;}
+.mod_list .icon1{ background-position:0 -100px;}
+.mod_list .icon2{ background-position:0 -150px;}
+.mod_list .icon3{ background-position:0 -200px;}
+.highlight{ background-color:#E1EFF7;}
+/*表单*/
+.mod_form td,.mod_form li{ padding:5px 0;}
+.mod_form label{ display:inline-block; width:80px;}
+.mod_form td{ vertical-align:top;}
+.mod_form em{ margin-left:1em; color:red;}
+/*系统配置*/
+.mod_config #allow{ margin-right:5px;}
+/*获取代码*/
+.mod_code label{ display:inline-block; width:100px;}
+.mod_code td{ vertical-align:top; padding:5px 0;}
+.mod_code #getto,.mod_code #click{ border:1px solid #C4D9E9; padding:5px;width:450px; overflow:hidden;}
+.mod_code fieldset{ border:1px solid #C5DFEC;}
+.mod_code legend{ color:#0CA4D6; margin-left:2em;}
+.mod_code p{ padding:5px; text-indent:1em;}
+/*网站概况*/
+.mod_report table{ color:#0C6796; width:100%; border:1px solid #A4C8DB; margin:10px 0;}
+.mod_report thead{ background-position:0 -550px; background-repeat:repeat-x;}
+.mod_report th{ font-weight:700;}
+.mod_report th,.mod_report td{ padding:5px;}
+.mod_report td{ border-top:1px solid #9AC8E1;}
+.mod_report .icon4{ background-position:0 -340px; display:inline-block; width:14px; height:22px; text-indent:-99em;overflow:hidden; margin-left:1em;}
+.mod_report .title{ color:black;}
+/*Flash报表*/
+.chart{ margin:10px 0; overflow:hidden;}
+.chart h2{ font-weight:700; padding-bottom:10px;}
+.chart #pid{ width:30%;}
+.chart #column{ width:60%;}
+/*colorbox*/
+#colorbox, #cboxOverlay, #cboxWrapper { position:absolute; top:0; left:0; z-index:9999; overflow:hidden; }
+#cboxOverlay { position:fixed; width:100%; height:100%; }
+#cboxMiddleLeft, #cboxBottomLeft { clear:left; }
+#cboxContent { position:relative; }
+#cboxLoadedContent { overflow:auto; }
+#cboxTitle { margin:0; }
+#cboxLoadingOverlay, #cboxLoadingGraphic { position:absolute; top:0; left:0; width:100%; }
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor:pointer; }
+.cboxPhoto { float:left; margin:auto; border:0; display:block; }
+.cboxIframe { width:100%; height:100%; display:block; border:0; }
+#cboxOverlay { background:url(colorbox/overlay.png) repeat 0 0; }
+#colorbox { }
+#cboxTopLeft { width:21px; height:21px; background:url(colorbox/controls.png) no-repeat -101px 0; }
+#cboxTopRight { width:21px; height:21px; background:url(colorbox/controls.png) no-repeat -130px 0; }
+#cboxBottomLeft { width:21px; height:21px; background:url(colorbox/controls.png) no-repeat -101px -29px; }
+#cboxBottomRight { width:21px; height:21px; background:url(colorbox/controls.png) no-repeat -130px -29px; }
+#cboxMiddleLeft { width:21px; background:url(colorbox/controls.png) left top repeat-y; }
+#cboxMiddleRight { width:21px; background:url(colorbox/controls.png) right top repeat-y; }
+#cboxTopCenter { height:21px; background:url(colorbox/border.png) 0 0 repeat-x; }
+#cboxBottomCenter { height:21px; background:url(colorbox/border.png) 0 -29px repeat-x; }
+#cboxContent { background:#fff; overflow:hidden; }
+.cboxIframe { background:#fff; }
+#cboxError { padding:50px; border:1px solid #ccc; }
+#cboxLoadedContent { margin-bottom:28px; }
+#cboxTitle { position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494; }
+#cboxCurrent { position:absolute; bottom:4px; left:58px; color:#949494; }
+#cboxSlideshow { position:absolute; bottom:4px; right:30px; color:#0092ef; }
+#cboxPrevious { position:absolute; bottom:0; left:0; background:url(colorbox/controls.png) no-repeat -75px 0; width:25px; height:25px; text-indent:-9999px; }
+#cboxPrevious:hover { background-position:-75px -25px; }
+#cboxNext { position:absolute; bottom:0; left:27px; background:url(colorbox/controls.png) no-repeat -50px 0; width:25px; height:25px; text-indent:-9999px; }
+#cboxNext:hover { background-position:-50px -25px; }
+#cboxLoadingOverlay { background:url(colorbox/loading_background.png) no-repeat center center; }
+#cboxLoadingGraphic { background:url(colorbox/loading.gif) no-repeat center center; }
+#cboxClose { position:absolute; bottom:0; right:0; background:url(colorbox/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px; }
+#cboxClose:hover { background-position:-25px -25px; }
+.cboxIE #cboxTopLeft, .cboxIE #cboxTopCenter, .cboxIE #cboxTopRight, .cboxIE #cboxBottomLeft, .cboxIE #cboxBottomCenter, .cboxIE #cboxBottomRight, .cboxIE #cboxMiddleLeft, .cboxIE #cboxMiddleRight {  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+}
+.cboxIE6 #cboxTopLeft { background:url(colorbox/ie6/borderTopLeft.png); }
+.cboxIE6 #cboxTopCenter { background:url(colorbox/ie6/borderTopCenter.png); }
+.cboxIE6 #cboxTopRight { background:url(colorbox/ie6/borderTopRight.png); }
+.cboxIE6 #cboxBottomLeft { background:url(colorbox/ie6/borderBottomLeft.png); }
+.cboxIE6 #cboxBottomCenter { background:url(colorbox/ie6/borderBottomCenter.png); }
+.cboxIE6 #cboxBottomRight { background:url(colorbox/ie6/borderBottomRight.png); }
+.cboxIE6 #cboxMiddleLeft { background:url(colorbox/ie6/borderMiddleLeft.png); }
+.cboxIE6 #cboxMiddleRight { background:url(colorbox/ie6/borderMiddleRight.png); }
+.cboxIE6 #cboxTopLeft, .cboxIE6 #cboxTopCenter, .cboxIE6 #cboxTopRight, .cboxIE6 #cboxBottomLeft, .cboxIE6 #cboxBottomCenter, .cboxIE6 #cboxBottomRight, .cboxIE6 #cboxMiddleLeft, .cboxIE6 #cboxMiddleRight {  _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}
+

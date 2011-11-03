@@ -2,11 +2,12 @@
 $root_dir = dirname(__FILE__);
 
 $sensors = array(
-    'localhost' => 'http://9.5.2.7/sitebeep/sensor.php',
+    'localhost' => 'http://sitebeep.local.host/a/sensor.php',
 );
 
 
 $dbfile = "{$root_dir}/db";
+echo $dbfile;
 if (file_exists($dbfile)) {
     $db = unserialize(file_get_contents($dbfile));
 } else {

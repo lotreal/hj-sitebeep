@@ -20,6 +20,7 @@
   </head>
 
   <body>
+
     <p><a class="skiplink" href="#maincontent">跳过导航区</a></p>
     <div id="container">
       <div id="wrapheader">
@@ -53,47 +54,8 @@
             <div id="content">
               <div id="maincontent">
                 <h1>网站概览</h1>
-                <table border="0" cellspacing="0"  class="checksHeader">
-                  <tr>
-                    <td class="checkHeadName">网站</td>
-                    <td class="status">状态</td>
-                    <td class="responseTime">响应时间</td>
-                    <td class="playPause">操作</td>
-                  </tr>
-                </table>
-                <table border="0" cellspacing="0"  class="check" id="checkID4206" onclick="javascript:window.location = '/uptime/alert_log/4206';">
-                  <tr>
-                    <td width="200px">
-                      <div class="checkName" title="http://www.cqq.com">重庆圈</div>
-                    </td>
-                    <td class="checkLinks">
 
-                      <table border="0" cellspacing="0"  class="checkDetails" width="100%">
-                        <tr class="stats">
-                          <td class="status">
-                            <strong>在线</strong> (2011-10-32 16:02:20)
-                          </td>
-                          <td class="responseTime">1585 ms</td>
-                          
-                          <td class="playPause">
-                            <a href="/a/checks/pause/4206"><img src="/a/img/icon/stop.png" class="icon showTip" title="Pause check - this will pause your check and you can resume anytime" alt="" /></a>                       
-                            
-
-                            <a href="/a/checks/index/4206"><img src="/a/img/icon/refresh.png" class="icon showTip showModalMessage" title="Check now - not implemented yet :|" alt="" /></a>
-                            <a href="/a/uptime/alert_log/4206" class="viewReport showTip" title="View the latest activity and edit this check" onClick="event.stopPropagation();">详情</a>                        
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td colspan="4" class="url">
-                            http://www.cqq.com
-                          </td>
-                        </tr>
-
-                      </table>
-                    </td>
-                  </tr>
-                </table>
+                <?php $this->load->view('checks/overview'); ?>
 
                 <div class="latestActivityMainPage latestActivity" >
                   <div class="contentTabs">

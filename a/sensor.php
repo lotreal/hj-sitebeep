@@ -3,8 +3,8 @@ $sites = array
     (
         // 'pinjiu' => 'http://www.pinjiu.com',
         // 'cqq' => 'http://www.cqq.com',
-        'test' => 'http://9.5.2.7',
-        'www.hj.com' => 'http://www.hj.com',
+        '测试' => 'http://9.5.2.7',
+        '鸿巨桌面' => 'http://www.hj.com',
      );
 
 $report = array

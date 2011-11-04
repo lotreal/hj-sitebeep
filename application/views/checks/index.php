@@ -14,7 +14,7 @@
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="/a/css/theme/ie7.css" /><![endif]-->
   </head>
 
-  <body>
+  <body class="checks">
 
     <p><a class="skiplink" href="#maincontent">跳过导航区</a></p>
     <div id="container">

@@ -7,7 +7,7 @@
   </tr>
 </table>
 <?php foreach($overview as $site => $report) { ?>
-<table border="0" cellspacing="0"  class="check" id="checkID4206" onclick="javascript:window.location = '/uptime/alert_log/4206';">
+<table border="0" cellspacing="0"  class="check c<?php echo $report['http_code'];?>" id="checkID4206" onclick="javascript:window.location = '/uptime/alert_log/4206';">
   <tr>
     <td width="200px">
       <div class="checkName" title="http://www.cqq.com"><?php echo $site;?></div>
@@ -17,7 +17,7 @@
       <table border="0" cellspacing="0"  class="checkDetails" width="100%">
         <tr class="stats">
           <td class="status">
-            <strong>在线</strong>
+            <strong><?php echo $report['http_code'];?></strong>
           </td>
      <td class="responseTime"><?php printf("%d", $report['detail']['total_time'] * 1000);?> ms</td>
           <td class="playPause">

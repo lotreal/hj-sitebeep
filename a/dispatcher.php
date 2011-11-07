@@ -1,12 +1,9 @@
 <?php
 $root_dir = dirname(__FILE__);
 
-$checks = array(
-    'check01' => 'http://wiki.hj.com',
-    '测试机' => 'http://9.5.2.7',
-    '测试 B' => 'http://wiki.hj.com',
-    '测试 C' => 'http://wiki.hj.com',
-    '鸿巨 JIRA' => 'http://www.hj.com',
+$sites = array(
+    // 'pinjiu' => 'http://www.pinjiu.com',
+    // 'cqq' => 'http://www.cqq.com',
     '鸿巨' => 'http://www.hongju.cc',
     '趣网' => 'http://www.qu.cc',
     '品酒网' => 'http://www.pinjiu.com',
@@ -16,19 +13,21 @@ $checks = array(
     '新浪' => 'http://www.sina.com',
     'QQ' => 'http://www.qq.com',
     '百度' => 'http://www.baidu.com',
+    '测试机' => 'http://9.5.2.7',
+    '测试 A' => 'http://wiki.hj.com',
+    '测试 B' => 'http://wiki.hj.com',
+    '测试 C' => 'http://wiki.hj.com',
+    '鸿巨 JIRA' => 'http://www.hj.com',
                );
 
 $sensors = array(
-    'sensor01' => array(
-        'sid' => 'ts1',
-        'name' => '重庆',
+    'test-sensor-01' => array(
         'name' => '重庆',
         'desc' => '1号测试探针',
         'type' => 'curl',
         'url' => 'http://sitebeep.local.host/a/sensor.php',
                          ),
-    'ts2' => array(
-        'sid' => 'ts2',
+    'test-sensor-02' => array(
         'name' => '北京',
         'desc' => '2号测试探针',
         'type' => 'curl',
@@ -73,9 +72,9 @@ function collect($url) {
     curl_close($ch);
 }
 
-function analysis($sid, $report) {
+function analysis($sid, $txt) {
     global $db, $sensors;
-    $data = unserialize($report);
+    $data = unserialize($txt);
     $sensor = $sensors[$sid];
     // var_dump($data);
     foreach($data['report'] as $site => $report) {
@@ -94,26 +93,11 @@ function analysis($sid, $report) {
     // echo json_encode($db);
 }
 
-function check($sid, $cid) {
-    global $sensors, $checks;
-    $sensor = $sensors[$sid];
-    $check  = $checks[$cid];
+$url = $sensors['test-sensor-01']['url'].'?c='.rawurlencode($sites['QQ']).'&c='.rawurlencode($sites['鸿巨 JIRA']);
 
-    $url = $sensor['url'];
-    $url.= '?u='.rawurlencode($check);
-    $url.= '&s='.$sid;
-    $url.= '&c='.$cid;
-
-    $report = collect($url);
-
-    $data = unserialize($report);
-    // $data = analysis($report);
-    var_dump($data);
-}
-
-check('sensor01', 'check01');
+$report = collect($url);
+var_dump($report);
 die();
-
 foreach($sensors as $sid => $sensor) {
     $report = collect($sensor['url']);
     analysis($sid, $report);

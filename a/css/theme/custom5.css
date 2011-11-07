@@ -181,6 +181,7 @@ h1 {font-family: 'Open Sans', arial, sans-serif;  font-size:24px; padding:0 0 15
 .checkDetails td{height: auto;}
 
 .checkDetails td.url{color:#333; text-align: left; padding:0px 5px 2px 5px; }
+.checkDetails td.summary{color:#999; text-align: left; padding:0px 5px 2px 5px; }
 
 /* bottom info bar */
 .checkDetails tr.stats td {padding:2px 5px 2px 5px; height:16px; font-size:11px; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; }
@@ -440,3 +441,11 @@ table.gui_progress_bar td {padding:0px; margin:0px;}
 .gui_progress_bar .color2, .color2 {background-color: #E88801}
 .gui_progress_bar .color3, .color3 {background-color: #FFC200}
 .gui_progress_bar .color4, .color4 {background-color: #EDEDBF}
+
+/* checks
+=====================================================================*/
+.c200 .checkName { background: green;}
+.c404 .checkName { background: red;}
+
+.c200 .status { color: green;}
+.c404 .status { color: red;}

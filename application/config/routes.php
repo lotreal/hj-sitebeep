@@ -39,7 +39,9 @@
 */
 
 $route['default_controller'] = "users";
+$route['default_controller'] = "checks";
 $route['404_override'] = '';
+$route['collect/(:any)/(:any)'] = "collect/index";
 
 
 /* End of file routes.php */

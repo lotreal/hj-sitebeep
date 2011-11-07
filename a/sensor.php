@@ -1,27 +1,35 @@
 <?php
-$sites = array
-    (
-        // 'pinjiu' => 'http://www.pinjiu.com',
-        // 'cqq' => 'http://www.cqq.com',
-        '测试' => 'http://9.5.2.7',
-        '鸿巨桌面' => 'http://www.hj.com',
-     );
+// 输出类型
+$type = isset($_GET["t"]) ? $_GET["t"] : 'ps';
+$type = in_array($type, array('ps', 'json')) ? $type : 'ps';
+$out_func = 'output_'.$type;
 
-$report = array
-    (
-        'time' => time(),
-        'sensor' => array
-        (
-            'id' => 'localhost',
-            'type' => 'curl',
-         ),
-        'report' => array(),
-     );
+function output_json($report) {
+    header("Content-Type: application/json; charset=utf-8");
+    echo json_encode($report);
+}
 
-function check_site($name, $url) {
+function output_ps($report) {
+    // header("Content-Type: application/text; charset=utf-8");
+    echo serialize($report);
+}
+
+function output($out) {
+    global $out_func;
+    $out_func($out);
+}
+
+function error($e) {
+    global $out_func;
+    $out_func(array('error' => $e));
+    die();
+}
+
+// TODO handle error
+function check_site($url) {
     $ch = curl_init(); // create cURL handle (ch)
     if (!$ch) {
-        return array('error' => "Couldn't initialize a cURL handle");
+        error("Couldn't initialize a cURL handle");
     }
 
     $ret = curl_setopt($ch, CURLOPT_URL,            $url);
@@ -38,30 +46,28 @@ function check_site($name, $url) {
         $info = curl_getinfo($ch);
         return $info;
     } else {
-        return array('error' => curl_error($ch));
+        error(curl_error($ch));
     }
 
     curl_close($ch);
 }
 
-foreach($sites as $name => $url) {
-    $report['report'][$name] = check_site($name, $url);
+
+if ( !(isset($_GET['u']) && isset($_GET['s']) && isset($_GET['c'])) ) {
+    error('Sensor: missing arguments');
 }
 
+$url    = $_GET['u'];
+$sensor = $_GET['s'];
+$check  = $_GET['c'];
 
-function output_json($report) {
-    header("Content-Type: application/json; charset=utf-8");
-    echo json_encode($report);
-}
+$report = array(
+    'sensor' => $sensor,
+    'check' => $check,
 
-function output_ps($report) {
-    // header("Content-Type: application/text; charset=utf-8");
-    echo serialize($report);
-}
+    't1' => time(),
+    'report' => check_site($url),
+    't2' => time(),
+                );
 
-$type = isset($_GET["t"]) ? $_GET["t"] : 'ps';
-if (in_array($type, array('ps', 'json'))) {
-    $out_func = 'output_'.$type;
-    $out_func($report);
-}
-
+output($report);

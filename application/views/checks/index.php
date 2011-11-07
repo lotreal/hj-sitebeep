@@ -12,14 +12,9 @@
     <link rel="stylesheet" type="text/css" href="/a/css/theme/custom5.css" />      
     <!-- <link rel="stylesheet" type="text/css" href="/a/css/msgbox/jquery.msgbox.css" /> -->
     <!--[if IE 7]><link rel="stylesheet" type="text/css" href="/a/css/theme/ie7.css" /><![endif]-->
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="/a/js/swfobject.js"></script> -->
-    <!-- <script type="text/javascript" src="/a/js/msgbox/jquery.msgbox.min.js"></script> -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   </head>
 
-  <body>
+  <body class="checks">
 
     <p><a class="skiplink" href="#maincontent">跳过导航区</a></p>
     <div id="container">
@@ -28,7 +23,7 @@
           <div id="wrapper">
             <div id="header">
               <a href="/checks" class="replace" id="logo0">
-                <span></span><h1 style="float:left;">siteBeep</h1>
+                <span></span><h1 style="float:left;">sitebeep</h1>
               </a>
 
               <div class="topUserInfo" title="上次登录时间：<?php echo date('Y-m-d H:i:s',$lastdate);?> 登录IP：<?php echo $lastip;?>">
@@ -64,11 +59,6 @@
                     <a  href="/checks/index/404">404</a>
                     <a  href="/checks/index/502">502</a>
                   </div>
-                  <script>
-                    $(document).ready(function(){
-                    $(".aj_check_status_list").load("/aj_elements/aj_check_status_list");
-                    });
-                  </script>
                   <div class="aj_check_status_list">
                     <center>
                       <img src="/a/img/custom/loading.gif" style="margin-top:100px;" alt="" />                    </center>
@@ -125,3 +115,7 @@
     </div>
   </body>
 </html>
+<script type="text/javascript" src="/a/js/jquery-1.6.4.min.js"></script>
+<!-- <script type="text/javascript" src="/a/js/swfobject.js"></script> -->
+<!-- <script type="text/javascript" src="/a/js/msgbox/jquery.msgbox.min.js"></script> -->
+<script type="text/javascript" src="/a/js/checks.js"></script>

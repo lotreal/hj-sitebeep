@@ -15,6 +15,26 @@ class Sensor_model extends CI_Model
 	{
 		parent::__construct();
 	}
+
+	public function getSensorName($sid)
+	{
+		if(empty($sid))
+		{
+			return '';
+		}
+		
+		$data = array();
+	
+		$params = array(
+					'select' => 'sname',
+					'from'   => $this->tableName,
+					'where'  => array('id' => $sid),
+					'limit' => 1
+				);
+		
+		$data = $this->proxy->getOne($params);
+		return (empty($data)) ? '' : $data['sname'];
+	}
 	
 	public function getSensor($sid)
 	{

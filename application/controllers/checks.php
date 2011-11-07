@@ -11,6 +11,10 @@ class Checks extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('commonmodel', 'proxy');
+		$this->load->model('report_model');
+		$this->load->model('sensor_model');
+		$this->load->model('check_model');
 	}
 
 	public function index()
@@ -20,11 +24,35 @@ class Checks extends CI_Controller
 					'username' => $this->session->userdata('username'),
 					'lastdate' => $this->session->userdata('lastdate'),
 					'lastip' => $this->session->userdata('lastip'),
-                    'overview' => $this->loadFromText(),
+                    'overview' => $this->loadFromDb(),
 				);
-
+        // $this->loadFromDb();
 		$this->load->view('checks/index', $data);
 	}
+
+    function loadFromDb()
+    {
+        $reports = $this->report_model->getAll();
+        $overview = array();
+        foreach ($reports as $row) {
+            $detail = unserialize($row->detail);
+            $tdiff = time() - $row->created;
+            $http_code = $row->status;
+            $overview[$row->cid] = array(
+                'check_id' => $row->cid,
+                'check_name' => $this->check_model->getCheckName($row->cid),
+                'check_url' => $row->url,
+
+                'sensor_name' => $this->sensor_model->getSensorName($row->sid),
+
+                'timestamp' => $tdiff.' 秒前',
+                'http_code' => $http_code,
+                'status' => $http_code == 200 ? '在线' : '离线',
+                'detail' => $detail,
+            );
+        }
+        return $overview;
+    }
 
     function loadFromText()
     {

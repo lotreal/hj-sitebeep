@@ -62,8 +62,8 @@ $sensor = $_GET['s'];
 $check  = $_GET['c'];
 
 $report = array(
-    'sensor' => $sensor,
-    'check' => $check,
+    'sid' => $sensor,
+    'cid' => $check,
 
     't1' => time(),
     'report' => check_site($url),

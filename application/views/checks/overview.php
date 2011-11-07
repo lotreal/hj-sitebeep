@@ -7,14 +7,23 @@
   </tr>
 </table>
 <?php foreach($overview as $site => $report) { ?>
-<table border="0" cellspacing="0"  class="check c<?php echo $report['http_code'];?>" id="checkID4206" onclick="javascript:window.location = '/uptime/alert_log/4206';">
+<table border="0" cellspacing="0"  class="check c<?php echo $report['http_code'];?>" id="checkID<?php echo $report['check_id']; ?>" onclick="javascript:window.location = '/uptime/alert_log/4206';">
   <tr>
     <td width="200px">
-      <div class="checkName" title="http://www.cqq.com"><?php echo $site;?></div>
+      <div class="checkName" title="<?php echo $report['check_url']; ?>"><?php echo $report['check_name'];?></div>
     </td>
     <td class="checkLinks">
 
       <table border="0" cellspacing="0"  class="checkDetails" width="100%">
+        <tr>
+          <td colspan="4" class="summary url">
+            <!-- <?php echo $report['detail']['http_code'];?> -->
+            <?php echo $report['timestamp'];?>
+            <?php echo $report['sensor_name'];?>
+            报告：
+          </td>
+        </tr>
+
         <tr class="stats">
           <td class="status">
             <strong><?php echo $report['http_code'];?></strong>
@@ -29,15 +38,6 @@
           </td>
         </tr>
 
-        <tr>
-          <td colspan="4" class="summary url">
-            <!-- <?php echo $report['detail']['http_code'];?> -->
-            <?php echo $report['location'];?>
-            <?php echo $report['timestamp'];?>
-            访问
-            <?php echo $report['detail']['url'];?>
-          </td>
-        </tr>
 
       </table>
     </td>

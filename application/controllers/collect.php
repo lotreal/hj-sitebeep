@@ -13,8 +13,10 @@ class Collect extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('commonmodel', 'proxy');
 		$this->load->model('sensor_model', 's');
 		$this->load->model('check_model', 'c');
+		$this->load->model('report_model', 'r');
 	}
 
 	public function index()
@@ -32,6 +34,17 @@ class Collect extends CI_Controller
             $this->do_check($this->sensor[0], $this->check[0]);
 	}
 
+	public function run()
+	{
+        $sensors = $this->s->getSensors();
+        $checks = $this->c->getChecks();
+        foreach ($checks as $c) {
+            foreach ($sensors as $s) {
+                $url = site_url('collect').'?sid='.$s->id.'&cid='.$c->id;
+                echo "$url\n";
+            }
+        }
+    } 
     function do_check($sensor, $check) {
         $url = $sensor->url;
         $url.= '?u='.rawurlencode($check->url);
@@ -40,14 +53,7 @@ class Collect extends CI_Controller
 
         $report = $this->do_collect($url);
         $data = unserialize($report);
-        // $data = analysis($report);
-        var_dump($data);
-        die($url);
-
-
-        $data = unserialize($report);
-        // $data = analysis($report);
-        var_dump($data);
+        $this->do_save($data);
     }
 
     function do_collect($url) {
@@ -74,6 +80,11 @@ class Collect extends CI_Controller
         }
 
         curl_close($ch);
+    }
+
+    function do_save($data) {
+        $this->r->insert($data);
+        // var_dump($data);
     }
 
 

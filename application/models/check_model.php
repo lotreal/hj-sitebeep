@@ -23,6 +23,26 @@ class Check_model extends CI_Model
         return $this->db->get()->result();
 	}
 
+	public function getCheckName($id)
+	{
+		if(empty($id))
+		{
+			return '';
+		}
+
+		$data = array();
+
+		$params = array(
+					'select' => 'cname',
+					'from'   => $this->tableName,
+					'where'  => array('id' => $id),
+					'limit'  => 1
+				);
+		
+		$data = $this->proxy->getOne($params);
+		return (empty($data)) ? '' : $data['cname'];
+	}
+
     /**
     * 
     * @access public

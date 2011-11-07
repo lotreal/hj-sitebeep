@@ -22,10 +22,14 @@ class Collect extends CI_Controller
 		$sid = (int)$this->uri->segment(2);
 		$cid = (int)$this->uri->segment(3);
 
+		$sid = (int)$this->input->get('sid');
+		$cid = (int)$this->input->get('cid');
+
+        // var_dump($sid);
         $this->sensor = $this->s->getSensor($sid);
         $this->check = $this->c->getCheck($cid);
-
-        $this->do_check($this->sensor[0], $this->check[0]);
+        if ($this->sensor && $this->check)
+            $this->do_check($this->sensor[0], $this->check[0]);
 	}
 
     function do_check($sensor, $check) {

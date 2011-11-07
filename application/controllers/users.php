@@ -48,11 +48,11 @@ class Users extends CI_Controller
 		
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('login');
+			$this->load->view('users/login');
 		}
 		else
 		{
-			$this->load->model('loginmodel', 'l');
+			$this->load->model('user_model', 'l');
 			$query = $this->l->getUserInfo();
 
 			if($query)

@@ -10,11 +10,10 @@
  * @version		1.0
  */
 
-class Loginmodel extends CI_Model
+class User_model extends CI_Model
 {
 
-	private $tableName = 'users'; // 用户
-	private $siteTableName = 'website'; // 推广网站
+	private $tableName = 'user'; // 用户
 	
 	/**
 	* 初始化
@@ -52,12 +51,6 @@ class Loginmodel extends CI_Model
 				);
 		
 		$data = $this->c->getOne($params);
-		$website = $this->getWebsite();
-		
-		if(!empty($website))
-		{
-			$data['sid'] = (isset($website[0]['sid'])) ? $website[0]['sid'] : 0;
-		}
 
 		if(!empty($data))
 		{
@@ -89,27 +82,4 @@ class Loginmodel extends CI_Model
 		$query = $this->c->update($this->tableName, $data, $params);
 		return $query;		
 	}
-	
-    /**
-    * 获取推广网站
-    * 
-    * @access public
-    * @return array
-    */
-	
-	public function getWebsite()
-	{
-		$data = array();
-		
-		$params = array(
-					'select' => 'sid,sitename',
-					'from' => $this->siteTableName,
-					'where' => array('status'=> 1),
-					'order_by' => 'rank desc'
-				);
-		
-		$data = $this->c->getAll($params);
-		return $data;
-	}
-
 }

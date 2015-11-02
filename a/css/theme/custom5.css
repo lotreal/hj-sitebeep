@@ -446,6 +446,8 @@ table.gui_progress_bar td {padding:0px; margin:0px;}
 =====================================================================*/
 .c200 .checkName { background: green;}
 .c404 .checkName { background: red;}
+.c502 .checkName { background: red;}
 
 .c200 .status { color: green;}
 .c404 .status { color: red;}
+.c502 .status { color: red;}
